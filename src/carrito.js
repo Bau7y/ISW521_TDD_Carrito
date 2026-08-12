@@ -8,8 +8,10 @@ function redondear(monto) {
   return Math.round(monto * 100) / 100;
 }
 
+const IVA = 1.13;
+
 function aplicarIVA(monto) {
-  return redondear(monto * 1.13);
+  return redondear(monto * IVA);
 }
 
 module.exports = { calcularSubtotal, aplicarIVA };
