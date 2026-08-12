@@ -1,13 +1,19 @@
-const { calcularSubtotal } = require('../src/carrito');
+const { calcularSubtotal, aplicarIVA } = require('../src/carrito');
 
+// --- PRUEBAS DEL SUBTOTAL ---
 describe('calcularSubtotal', () => {
   test('suma precio por cantidad de cada producto', () => {
     const items = [
       { nombre: 'Teclado', precio: 15000, cantidad: 2 },
       { nombre: 'Mouse', precio: 8000, cantidad: 1 },
     ];
-
     expect(calcularSubtotal(items)).toBe(38000);
   });
 });
 
+// --- PRUEBAS DEL IVA ---
+describe('aplicarIVA', () => {
+  test('aplica el 13% de IVA sobre el monto', () => {
+    expect(aplicarIVA(38000)).toBe(42940);
+  });
+});
