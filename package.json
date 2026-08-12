@@ -1,0 +1,23 @@
+{
+  "name": "tdd-demo-carrito",
+  "version": "1.0.0",
+  "description": "Demo de Test-Driven Development con Jest - ISW-521, UTN Sede San Carlos",
+  "main": "src/carrito.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:cov": "jest --coverage",
+    "demo:reset": "bash scripts/reset-demo.sh",
+    "demo:restore": "bash scripts/restore-demo.sh"
+  },
+  "keywords": [
+    "tdd",
+    "jest",
+    "testing",
+    "isw-521"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
