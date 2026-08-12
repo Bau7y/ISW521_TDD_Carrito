@@ -1,9 +1,5 @@
 function calcularSubtotal(items) {
-  let total = 0;
-  for (let i = 0; i < items.length; i++) {
-    total += items[i].precio * items[i].cantidad;
-  }
-  return total;
+  return items.reduce((total, item) => total + item.precio * item.cantidad, 0);
 }
 
 module.exports = { calcularSubtotal };
