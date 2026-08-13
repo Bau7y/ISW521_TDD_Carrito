@@ -1,4 +1,4 @@
-const { calcularSubtotal, aplicarIVA, aplicarDescuento } = require('../src/carrito');
+const { calcularSubtotal, aplicarIVA, aplicarDescuento, calcularTotal } = require('../src/carrito');
 
 // --- PRUEBAS DEL SUBTOTAL ---
 describe('calcularSubtotal', () => {
@@ -31,3 +31,14 @@ test('rechaza un descuento mayor a 100%', () => {
     .toThrow('El descuento debe estar entre 0 y 100');
 });
 
+describe('calcularTotal', () => {
+  test('aplica descuento y luego IVA sobre el subtotal', () => {
+    const items = [{ nombre: 'Monitor', precio: 10000, cantidad: 1 }];
+
+    expect(calcularTotal(items, 10)).toBe(10170);
+  });
+
+  test('un carrito vacío da total 0', () => {
+    expect(calcularTotal([], 0)).toBe(0);
+  });
+});
