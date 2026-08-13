@@ -14,4 +14,8 @@ function aplicarIVA(monto) {
   return redondear(monto * IVA);
 }
 
-module.exports = { calcularSubtotal, aplicarIVA };
+function aplicarDescuento(monto, porcentaje) {
+  return redondear(monto - monto * (porcentaje / 100));
+}
+
+module.exports = { calcularSubtotal, aplicarIVA, aplicarDescuento };

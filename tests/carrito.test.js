@@ -1,4 +1,4 @@
-const { calcularSubtotal, aplicarIVA } = require('../src/carrito');
+const { calcularSubtotal, aplicarIVA, aplicarDescuento } = require('../src/carrito');
 
 // --- PRUEBAS DEL SUBTOTAL ---
 describe('calcularSubtotal', () => {
@@ -24,3 +24,4 @@ describe('aplicarDescuento', () => {
     expect(aplicarDescuento(10000, 10)).toBe(9000);
   });
 });
+
