@@ -64,3 +64,7 @@ describe('calcularEnvio', () => {
     expect(calcularEnvio(30000)).toBe(2500);
   });
 });
+
+test('el envío es gratis justo en el monto mínimo', () => {
+  expect(calcularEnvio(50000)).toBe(0);
+});
