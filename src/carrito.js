@@ -27,4 +27,10 @@ function calcularTotal(items, porcentajeDescuento = 0) {
   return aplicarIVA(conDescuento);
 }
 
-module.exports = { calcularSubtotal, aplicarIVA, aplicarDescuento, calcularTotal };
+function formatearPrecio(monto) {
+  const [entero, decimales] = monto.toFixed(2).split('.');
+  return `₡${entero},${decimales}`;
+}
+
+module.exports = { calcularSubtotal, aplicarIVA, aplicarDescuento, 
+  calcularTotal, formatearPrecio };

@@ -43,4 +43,10 @@ describe('calcularTotal', () => {
   });
 });
 
+// --- Formateo de precios ---
+describe('formatearPrecio', () => {
+  test('formatea un monto como colones con separador de miles', () => {
+    expect(formatearPrecio(42940)).toBe('₡42.940,00');
+  });
+});
 
