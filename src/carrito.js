@@ -36,5 +36,9 @@ function formatearPrecio(monto) {
   return `₡${agruparMiles(entero)},${decimales}`;
 }
 
+function calcularEnvio(subtotal) {
+  return subtotal > 50000 ? 0 : 2500;
+}
+
 module.exports = { calcularSubtotal, aplicarIVA, aplicarDescuento, 
-  calcularTotal, formatearPrecio };
+  calcularTotal, formatearPrecio, calcularEnvio };

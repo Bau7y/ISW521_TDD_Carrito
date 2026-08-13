@@ -1,5 +1,5 @@
 const { calcularSubtotal, aplicarIVA, aplicarDescuento, 
-  calcularTotal, formatearPrecio } = require('../src/carrito');
+  calcularTotal, formatearPrecio, calcularEnvio } = require('../src/carrito');
 
 // --- PRUEBAS DEL SUBTOTAL ---
 describe('calcularSubtotal', () => {
@@ -59,3 +59,8 @@ test('formatea montos menores a mil sin separador', () => {
   expect(formatearPrecio(950)).toBe('₡950,00');
 });
 
+describe('calcularEnvio', () => {
+  test('cobra envío cuando el subtotal es menor al mínimo', () => {
+    expect(calcularEnvio(30000)).toBe(2500);
+  });
+});
