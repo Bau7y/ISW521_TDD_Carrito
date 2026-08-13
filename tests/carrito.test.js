@@ -42,3 +42,5 @@ describe('calcularTotal', () => {
     expect(calcularTotal([], 0)).toBe(0);
   });
 });
+
+

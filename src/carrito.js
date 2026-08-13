@@ -21,4 +21,10 @@ function aplicarDescuento(monto, porcentaje) {
   return redondear(monto - monto * (porcentaje / 100));
 }
 
-module.exports = { calcularSubtotal, aplicarIVA, aplicarDescuento };
+function calcularTotal(items, porcentajeDescuento = 0) {
+  const subtotal = calcularSubtotal(items);
+  const conDescuento = aplicarDescuento(subtotal, porcentajeDescuento);
+  return aplicarIVA(conDescuento);
+}
+
+module.exports = { calcularSubtotal, aplicarIVA, aplicarDescuento, calcularTotal };
