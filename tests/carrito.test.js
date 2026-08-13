@@ -17,3 +17,10 @@ describe('aplicarIVA', () => {
     expect(aplicarIVA(38000)).toBe(42940);
   });
 });
+
+// --- APLICAR DESCUENTO ---
+describe('aplicarDescuento', () => {
+  test('resta el porcentaje indicado', () => {
+    expect(aplicarDescuento(10000, 10)).toBe(9000);
+  });
+});
