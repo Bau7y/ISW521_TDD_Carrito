@@ -1,3 +1,7 @@
+
+const COSTO_ENVIO = 2500;
+const ENVIO_GRATIS_DESDE = 50000
+
 //Prueba 1
 function calcularSubtotal(items) {
   return items.reduce((total, item) => total + item.precio * item.cantidad, 0);
@@ -37,7 +41,7 @@ function formatearPrecio(monto) {
 }
 
 function calcularEnvio(subtotal) {
-  return subtotal > 50000 ? 0 : 2500;
+  return subtotal >= ENVIO_GRATIS_DESDE ? 0 : COSTO_ENVIO;
 }
 
 module.exports = { calcularSubtotal, aplicarIVA, aplicarDescuento, 
