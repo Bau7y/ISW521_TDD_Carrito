@@ -25,3 +25,9 @@ describe('aplicarDescuento', () => {
   });
 });
 
+// --- rechazar descuentos inválidos ---
+test('rechaza un descuento mayor a 100%', () => {
+  expect(() => aplicarDescuento(10000, 150))
+    .toThrow('El descuento debe estar entre 0 y 100');
+});
+

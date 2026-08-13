@@ -15,6 +15,9 @@ function aplicarIVA(monto) {
 }
 
 function aplicarDescuento(monto, porcentaje) {
+  if (porcentaje < 0 || porcentaje > 100) {
+    throw new Error('El descuento debe estar entre 0 y 100');
+  }
   return redondear(monto - monto * (porcentaje / 100));
 }
 
