@@ -1,4 +1,5 @@
-const { calcularSubtotal, aplicarIVA, aplicarDescuento, calcularTotal } = require('../src/carrito');
+const { calcularSubtotal, aplicarIVA, aplicarDescuento, 
+  calcularTotal, formatearPrecio } = require('../src/carrito');
 
 // --- PRUEBAS DEL SUBTOTAL ---
 describe('calcularSubtotal', () => {
@@ -48,5 +49,13 @@ describe('formatearPrecio', () => {
   test('formatea un monto como colones con separador de miles', () => {
     expect(formatearPrecio(42940)).toBe('₡42.940,00');
   });
+});
+
+test('agrupa correctamente montos de millones', () => {
+  expect(formatearPrecio(1234567.5)).toBe('₡1.234.567,50');
+});
+
+test('formatea montos menores a mil sin separador', () => {
+  expect(formatearPrecio(950)).toBe('₡950,00');
 });
 
