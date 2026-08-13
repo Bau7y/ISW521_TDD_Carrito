@@ -27,9 +27,13 @@ function calcularTotal(items, porcentajeDescuento = 0) {
   return aplicarIVA(conDescuento);
 }
 
+function agruparMiles(entero) {
+  return entero.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
+
 function formatearPrecio(monto) {
   const [entero, decimales] = monto.toFixed(2).split('.');
-  return `₡${entero},${decimales}`;
+  return `₡${agruparMiles(entero)},${decimales}`;
 }
 
 module.exports = { calcularSubtotal, aplicarIVA, aplicarDescuento, 
